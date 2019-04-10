@@ -1,0 +1,19 @@
+@import "../../shared/variables";
+
+.catalog {
+    display: inline-block;
+    width: 100%;
+}
+
+.catalog--compact {
+  @media only screen and (max-width: ($query-min-desktop - 1)) {
+    filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius='3');
+    filter: blur(10px);
+    opacity: 0.7;
+    pointer-events: none;
+  }
+
+  @media only screen and (min-width: $query-min-desktop) {
+    width: calc((100vw / 5) * 3);
+  }
+}

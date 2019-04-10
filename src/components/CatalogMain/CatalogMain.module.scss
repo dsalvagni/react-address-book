@@ -1,0 +1,13 @@
+@import "../../shared/variables";
+
+.main {
+  position: relative;
+  height: $main-content-height;
+  .main__content {
+    overflow: auto;
+    border-radius: $border-radius;
+    height: $main-content-height;
+  }
+}
+
+

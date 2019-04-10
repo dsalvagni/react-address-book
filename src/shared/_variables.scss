@@ -1,0 +1,18 @@
+$header-height: 80px;
+$header-input-height: 40px;
+$header-input-margin: 10px;
+$header-buttons-width: 100px;
+$header-input-width: calc(
+  100% - #{$header-buttons-width} - #{$header-input-margin * 2}
+);
+$footer-height: 40px;
+$main-content-height: calc(100vh - #{$header-height} - #{$footer-height});
+$card-fluid-title-size: calc(1vw + 1vh + 0.5vmin);
+$card-fluid-info-size: calc(0.5vw + 1vh + 0.5vmin);
+$primary-color: #e0e0e0;
+$border-radius: 3px;
+$modal-zindex: 100;
+$query-min-tablet: 768px;
+$query-min-desktop: 1024px;
+$grid-columns-tablet: 2;
+$grid-columns-desktop: 5;

@@ -1,10 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+import Home from "./pages/Home";
+import "./App.scss";
 
 class App extends Component {
   render() {
-    return (
-      <div>Address Book</div>
-    );
+    return <div className="rlx">
+    <Home />
+    </div>;
   }
 }
 
