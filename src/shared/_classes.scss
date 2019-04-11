@@ -24,3 +24,12 @@
   filter: blur(10px);
   opacity: 0.7;
 }
+.pre-wrap {
+  white-space: pre-wrap;
+}
+
+.container {
+  display: inline-block;
+  width: 100%;
+  padding: 10px;
+}

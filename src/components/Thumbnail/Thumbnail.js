@@ -11,7 +11,7 @@ const Thumbnail = ({ size, url, className } = { size: "128px" }) => {
 
   return (
     <div className={cssClass.join(" ")} style={{ maxWidth: size }}>
-      <img src={url} />
+      <img src={url} alt="profile thumbnail"/>
     </div>
   );
 };
