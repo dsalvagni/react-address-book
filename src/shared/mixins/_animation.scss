@@ -1,0 +1,18 @@
+@import "./../variables";
+@mixin animation(
+  $animation,
+  $duration,
+  $delay,
+  $transition,
+  $iteration,
+  $fillmode: none
+) {
+  @each $prefix in $prefixes {
+    #{$prefix}animation-name: $animation;
+    #{$prefix}animation-duration: $duration;
+    #{$prefix}animation-delay: $delay;
+    #{$prefix}animation-timing-function: $transition;
+    #{$prefix}animation-iteration-count: $iteration;
+    #{$prefix}animation-fill-mode: $fillmode;
+  }
+}

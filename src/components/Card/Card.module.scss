@@ -23,3 +23,9 @@
   @include fluid-type(320px, 1024px, 12px, 14px);
   @extend .truncate;
 }
+
+.card__flag {
+  font-size: 24px;
+  position: relative;
+  top: -10px;
+}

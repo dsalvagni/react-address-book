@@ -1,11 +1,11 @@
 import React from "react";
 
-import styles from "./CatalogFooter.module.scss"
+import styles from "./CatalogFooter.module.scss";
 
-const CatalogFooter = () => {
+const CatalogFooter = ({ status }) => {
   return (
     <footer className={styles.footer}>
-      <div className={styles.footer__status}>Showing 10 of 20 contacts</div>
+      <div className={styles.footer__status}>{status}</div>
     </footer>
   );
 };

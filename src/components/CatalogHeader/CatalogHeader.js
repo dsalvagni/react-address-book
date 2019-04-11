@@ -1,17 +1,21 @@
 import React from "react";
-import Search from "components/Search/Search";
-import Icon from "components/Icon/Icon";
+import { Link } from "react-router-dom";
 
-import styles from "./CatalogHeader.module.scss";
+import Search from "./Search/Search";
+import Icon from "components/Icon/Icon";
+import Header from "components/Header/Header";
 
 const CatalogHeader = () => {
+  const SettingsLink = (
+    <Link to="/settings">
+      <Icon name="settings" size={24} />
+    </Link>
+  );
+
   return (
-    <header className={styles.header}>
+    <Header rightContent={SettingsLink}>
       <Search />
-      <a href="#" className={styles.header__button}>
-        <Icon name="settings" size={24} />
-      </a>
-    </header>
+    </Header>
   );
 };
 

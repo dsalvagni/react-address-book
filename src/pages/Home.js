@@ -1,106 +1,15 @@
 import React from "react";
+import { Route } from "react-router-dom";
 
-import Catalog from "components/Catalog/Catalog";
-import CatalogHeader from "components/CatalogHeader/CatalogHeader";
-import CatalogFooter from "components/CatalogFooter/CatalogFooter";
-import CatalogMain from "components/CatalogMain/CatalogMain";
-import CatalogDetails from "components/CatalogDetails/CatalogDetails";
-import InlineGrid from "components/InlineGrid/InlineGrid";
-import InlineGridItem from "components/InlineGrid/InlineGridItem";
-import Card from "components/Card/Card";
+import Catalog from "containers/Catalog/Catalog";
+import CatalogDetails from "containers/CatalogDetails/CatalogDetails";
 
-const Home = () => {
+const Home = props => {
+  const isDetails = props.match.path === "/details/:username?";
   return (
     <div className="home">
-      <CatalogDetails show={true} />
-      <Catalog>
-        <CatalogHeader />
-        <CatalogMain>
-          <InlineGrid>
-            <InlineGridItem>
-              <a href="#">
-                <Card
-                  imageUrl="https://randomuser.me/api/portraits/women/32.jpg"
-                  fullName="Daniel Salvagni"
-                  email="danielsalvagni@gmail.com"
-                  username="danielsalvagni"
-                />
-              </a>
-            </InlineGridItem>
-            <InlineGridItem>
-              <a href="#">
-                <Card
-                  imageUrl="https://randomuser.me/api/portraits/women/32.jpg"
-                  fullName="Daniel Salvagni"
-                  email="danielsalvagni@gmail.com"
-                  username="danielsalvagni"
-                />
-              </a>
-            </InlineGridItem>
-            <InlineGridItem>
-              <a href="#">
-                <Card
-                  imageUrl="https://randomuser.me/api/portraits/women/32.jpg"
-                  fullName="Daniel Salvagni"
-                  email="danielsalvagni@gmail.com"
-                  username="danielsalvagni"
-                />
-              </a>
-            </InlineGridItem>
-            <InlineGridItem>
-              <a href="#">
-                <Card
-                  imageUrl="https://randomuser.me/api/portraits/women/32.jpg"
-                  fullName="Daniel Salvagni"
-                  email="danielsalvagni@gmail.com"
-                  username="danielsalvagni"
-                />
-              </a>
-            </InlineGridItem>
-            <InlineGridItem>
-              <a href="#">
-                <Card
-                  imageUrl="https://randomuser.me/api/portraits/women/32.jpg"
-                  fullName="Daniel Salvagni"
-                  email="danielsalvagni@gmail.com"
-                  username="danielsalvagni"
-                />
-              </a>
-            </InlineGridItem>
-            <InlineGridItem>
-              <a href="#">
-                <Card
-                  imageUrl="https://randomuser.me/api/portraits/women/32.jpg"
-                  fullName="Daniel Salvagni"
-                  email="danielsalvagni@gmail.com"
-                  username="danielsalvagni"
-                />
-              </a>
-            </InlineGridItem>
-            <InlineGridItem>
-              <a href="#">
-                <Card
-                  imageUrl="https://randomuser.me/api/portraits/women/32.jpg"
-                  fullName="Daniel Salvagni"
-                  email="danielsalvagni@gmail.com"
-                  username="danielsalvagni"
-                />
-              </a>
-            </InlineGridItem>
-            <InlineGridItem>
-              <a href="#">
-                <Card
-                  imageUrl="https://randomuser.me/api/portraits/women/32.jpg"
-                  fullName="Daniel Salvagni"
-                  email="danielsalvagni@gmail.com"
-                  username="danielsalvagni"
-                />
-              </a>
-            </InlineGridItem>
-          </InlineGrid>
-        </CatalogMain>
-        <CatalogFooter />
-      </Catalog>
+      <Route path="/details/:username" component={CatalogDetails} />
+      <Catalog isCompact={isDetails} />
     </div>
   );
 };

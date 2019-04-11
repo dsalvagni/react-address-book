@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import propTypes from "prop-types";
 
 import ICONS from "./constants/Icons";
+import styles from "./Icon.module.scss";
 
 /**
  * Icons as React components
@@ -13,7 +14,7 @@ import ICONS from "./constants/Icons";
 class Icon extends Component {
   render() {
     const props = this.props;
-    const styles = {
+    const svgStyles = {
       svg: {
         display: "inline-block",
         verticalAlign: "middle"
@@ -27,15 +28,16 @@ class Icon extends Component {
     const icon = ICONS[props.name];
     const cssClasses = [`Icon Icon--${props.name}`];
     if (props.className) cssClasses.push(props.className);
+    if (props.spinning) cssClasses.push(styles.spinning);
     return (
       <svg
         className={cssClasses.join(" ")}
-        style={styles.svg}
+        style={svgStyles.svg}
         width={`${props.size}px`}
         height={`${props.size}px`}
         viewBox="0 0 80 80"
       >
-        <path style={styles.path} d={icon} />
+        <path style={svgStyles.path} d={icon} />
       </svg>
     );
   }
@@ -44,7 +46,8 @@ Icon.propTypes = {
   name: propTypes.string.isRequired,
   size: propTypes.number,
   color: propTypes.string,
-  strokeWidth: propTypes.string
+  strokeWidth: propTypes.string,
+  spinning: propTypes.bool
 };
 
 Icon.defaultProps = {
