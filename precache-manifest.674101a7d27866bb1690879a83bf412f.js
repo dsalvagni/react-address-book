@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "c0c04a978448a0338908",
+    "revision": "54e4e64f24ca11583143",
     "url": "/react-address-book/static/css/main.7548c6cc.chunk.css"
   },
   {
-    "revision": "c0c04a978448a0338908",
-    "url": "/react-address-book/static/js/main.45cee040.chunk.js"
+    "revision": "54e4e64f24ca11583143",
+    "url": "/react-address-book/static/js/main.f14b953d.chunk.js"
   },
   {
     "revision": "76d32c16cc0834134ea6",
@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/react-address-book/static/js/2.d0e6fe51.chunk.js"
   },
   {
-    "revision": "610e379ab678fe3a135ebfd612ee7307",
+    "revision": "d964d8bc5659b6ccb9f2e0c1a25af7d8",
     "url": "/react-address-book/index.html"
   }
 ];
