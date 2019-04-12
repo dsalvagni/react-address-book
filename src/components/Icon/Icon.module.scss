@@ -1,5 +1,0 @@
-@import "../../shared/animations";
-.spinning {
-  @include rotating;
-  @include animation(rotating, 1.1s, 0, linear, infinite);
-}
