@@ -9,9 +9,21 @@ import Card from "components/Card/Card";
 
 import styles from "./CatalogMain.module.scss";
 
+/**
+ * Wrapper for the main content of users' catalog.
+ * Displays the list of users and trigger the scrollEnd callback when
+ * the scroll hits the bottom of the catalog.
+ *
+ * Redux
+ */
 const CatalogMain = props => {
   const { items, search, onScrollEnd } = props;
 
+  /**
+   * Iterates on items to generate a list of users' cards.
+   * @param User[] items
+   * @returns InlineGridItem[]
+   */
   const renderItems = items => {
     return items.map((item, key) => {
       return (
@@ -24,6 +36,12 @@ const CatalogMain = props => {
     });
   };
 
+  /**
+   * Renders this component contents.
+   * Returns a message in case there's no item to display for a given search query
+   * @param User[] items
+   * @returns Not found items message || Items
+   */
   const renderMain = items => {
     if (!items || !items.length)
       if (search.query)
@@ -39,6 +57,10 @@ const CatalogMain = props => {
     return <InlineGrid>{renderItems(items)}</InlineGrid>;
   };
 
+  /**
+   * Will call props ScrollEnd callback when the scrollbar hits the bottom of catalog
+   * @param Event event
+   */
   const onScroll = event => {
     const isScrollEnd =
       event.target.scrollHeight - event.target.scrollTop <=
@@ -61,7 +83,9 @@ CatalogMain.defaultProps = {
 };
 
 CatalogMain.propTypes = {
+  /** User[] */
   items: PropTypes.array,
+  /** Called when the scrollbar hits the bottom of the catalog */
   onScrollEnd: PropTypes.func
 };
 

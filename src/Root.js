@@ -6,6 +6,9 @@ import thunk from "redux-thunk";
 import { composeEnhancers, rootReducer } from "store";
 import { BrowserRouter as Router } from "react-router-dom";
 
+/**
+ * Wrapps the app with redux and react router
+ */
 function Root({ children, initialState = {} }) {
   const store = createStore(
     rootReducer,

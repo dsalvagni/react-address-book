@@ -1,3 +1,11 @@
+/** 
+ * Redux Store base configuration
+ * Registry of all reducers
+ * 
+ * This store holds and splits all reducers and actions in different folders and files.
+ * reducers/*
+ * actions/*
+*/
 import { combineReducers, compose } from "redux";
 
 import indexReducer from "store/reducers";

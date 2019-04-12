@@ -5,7 +5,13 @@ const INITIAL_STATE = {
   query: ""
 };
 
-function users(state = INITIAL_STATE, action) {
+/**
+ * Manages the state of the search string
+ * @param {Object} [state=INITIAL_STATE]
+ * @param {Object} action
+ * @returns
+ */
+function search(state = INITIAL_STATE, action) {
   switch (action.type) {
     case QUERY_SET:
       return updateObject(state, action.payload);
@@ -14,4 +20,4 @@ function users(state = INITIAL_STATE, action) {
   }
 }
 
-export default users;
+export default search;

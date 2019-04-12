@@ -1,7 +1,10 @@
 import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 import styles from "./HighlightText.module.scss";
-
+/**
+ * Highlights parts of a texts for a given string
+ * Stateless
+ */
 const HighlightText = ({ text, highlight }) => {
   function getHighlightedText(text, highlight) {
     if (!highlight) return <Fragment>{text}</Fragment>;
@@ -23,7 +26,9 @@ const HighlightText = ({ text, highlight }) => {
 };
 
 HighlightText.propTypes = {
+  /** Multiline text */
   text: PropTypes.string,
+  /** String to be replaced with a highlight style */
   highlight: PropTypes.string
 };
 

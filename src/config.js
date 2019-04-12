@@ -1,3 +1,7 @@
+
+/** 
+ * Set the base configuration for this app.
+ */
 const CONFIG = {
   contactsPerPage: 50,
   contactsLimit: 1000,

@@ -2,16 +2,22 @@ import { NATIONALITIES_SET } from "store/actions/settings";
 
 import Config from "config.js";
 
-const nationalities = Config.nationalities.reduce((obj, item) => {
+const allNationalities = Config.nationalities.reduce((obj, item) => {
   obj[item.key] = true;
   return obj;
 }, {});
 
 const INITIAL_STATE = {
-  nationalities
+  nationalities: allNationalities
 };
 
-function users(state = INITIAL_STATE, action) {
+/**
+ * Manages the APP settings
+ * @param {object} [state=INITIAL_STATE]
+ * @param {object} action
+ * @returns
+ */
+function settings(state = INITIAL_STATE, action) {
   switch (action.type) {
     case NATIONALITIES_SET:
       return {
@@ -25,4 +31,4 @@ function users(state = INITIAL_STATE, action) {
   }
 }
 
-export default users;
+export default settings;

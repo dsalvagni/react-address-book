@@ -1,3 +1,9 @@
+/**
+ * Structures the users data model
+ * Has handy methods to access properties
+ *
+ * @class User
+ */
 class User {
   constructor(data = {}) {
     Object.assign(this, data);

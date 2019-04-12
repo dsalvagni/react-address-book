@@ -6,6 +6,12 @@ import NationalitiesSettings from "containers/NationalitiesSettings/Nationalitie
 import Header from "components/Header/Header";
 import Icon from "components/Icon/Icon";
 
+/**
+ * Represents the settings page of this app.
+ *
+ * Stateless
+ * Router
+ */
 const Settings = () => {
   const BackButton = (
     <Link to="/">
