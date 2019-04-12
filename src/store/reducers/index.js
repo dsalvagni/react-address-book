@@ -3,7 +3,18 @@ import updateObject from "store/utility";
 
 const INITIAL_STATE = {};
 
-function users(state = INITIAL_STATE, action) {
+/**
+ * This reducer is used to set, during a fetch request, the API state.
+ * Before the API fetchs, it should call API_START and after it ends, API_END.
+ * This way we can track any request state.
+ * 
+ * Action example: { type: API_START, payload: "APIUserStarted"}
+ *
+ * @param {Object} [state=INITIAL_STATE]
+ * @param {Object} action
+ * @returns
+ */
+function index(state = INITIAL_STATE, action) {
   switch (action.type) {
     case API_START:
       return updateObject(state, { [action.payload]: true });
@@ -14,4 +25,4 @@ function users(state = INITIAL_STATE, action) {
   }
 }
 
-export default users;
+export default index;

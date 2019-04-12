@@ -7,8 +7,15 @@ import styles from "./Search.module.scss";
 
 import Icon from "components/Icon/Icon";
 
+/**
+ * Search component for the users' catalog.
+ * The query it's typed here will be propagate through Redux in order to make 
+ * it available so other components can consume it.
+ * Statefull | Redux
+ * @class Search
+ * @extends {Component}
+ */
 class Search extends Component {
-  
   constructor(props) {
     super(props);
     this.state = {

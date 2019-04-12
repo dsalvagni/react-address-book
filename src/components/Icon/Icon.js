@@ -43,10 +43,15 @@ class Icon extends Component {
   }
 }
 Icon.propTypes = {
+  /** Icon identifier */
   name: propTypes.string.isRequired,
+  /** Icon size */
   size: propTypes.number,
+  /** Color fill */
   color: propTypes.string,
+  /** SVG wtroke width */
   strokeWidth: propTypes.string,
+  /** Animates it spinning */
   spinning: propTypes.bool
 };
 

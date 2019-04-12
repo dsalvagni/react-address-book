@@ -13,11 +13,29 @@ import User from "models/User";
 
 import styles from "./CatalogDetails.module.scss";
 
+/**
+ * Presents User's details
+ * It's going to be shown as a side panel on desktop and as a modal on mobile/tablet
+ * 
+ * If not user is specified, it should return to the home page.
+ *
+ * @class CatalogDetails
+ * @extends {Component}
+ */
 class CatalogDetails extends Component {
   componentDidMount() {
     if (!this.props.users.items.length) return <Redirect to="/" />;
   }
 
+  /**
+   * On mobile/tablet, a link is going to be shown behind the modal. This link
+   * navigates the page back to the home page. It's useful to when the users clicks 
+   * outside the modal. Although, to avoid the click when the user hits the modal,
+   * we should stop the event propagation.
+   *
+   * @param {Event} event
+   * @memberof CatalogDetails
+   */
   onDetailsClick(event) {
     event.stopPropagation();
   }

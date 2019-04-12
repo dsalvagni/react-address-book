@@ -1,7 +1,12 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import styles from "./Header.module.scss";
 
+/**
+ * Wrapper for the App's header
+ * Stateless
+ */
 const Header = ({ children, rightContent, leftContent }) => {
   const getHeaderCenterCssClass = (right, left) => {
     const cssCenter = [styles.header__center];
@@ -24,6 +29,27 @@ const Header = ({ children, rightContent, leftContent }) => {
       ) : null}
     </header>
   );
+};
+
+Header.propTypes = {
+  /** Childrens are going be placed in the center*/
+  children: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+    PropTypes.object
+  ]),
+  /** Usually an icon to be placed right */
+  rightContent: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+    PropTypes.object
+  ]),
+  /** Usually an icon to be placed left */
+  leftContent: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+    PropTypes.object
+  ])
 };
 
 export default Header;

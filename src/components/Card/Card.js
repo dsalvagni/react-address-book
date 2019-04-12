@@ -8,7 +8,12 @@ import HighlightText from "components/HighlightText/HighlightText";
 import User from "models/User";
 
 import styles from "./Card.module.scss";
-
+/**
+ * Summarizes user information in a card format.
+ * It can highlight a part of users full name that comes handy
+ * in a search results list.
+ * Stateless
+ */
 const Card = ({ user, highlight }) => {
   return (
     <div className={styles.card}>
@@ -24,7 +29,9 @@ const Card = ({ user, highlight }) => {
 };
 
 Card.propTypes = {
+  /** User model */
   user: PropTypes.instanceOf(User).isRequired,
+  /** String to be highlighted on user's fullname text*/
   highlight: PropTypes.string
 };
 
