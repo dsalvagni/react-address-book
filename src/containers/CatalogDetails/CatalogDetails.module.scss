@@ -1,0 +1,149 @@
+@import "../../shared/variables";
+@import "../../shared/classes";
+@import "../../shared/mixins/fluid-type";
+.details {
+  display: none;
+  width: 100%;
+  max-width: 740px;
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: $border-radius;
+  z-index: $modal-zindex;
+  padding: 20px;
+
+  @media only screen and (min-width: $query-min-desktop) {
+    background: transparent;
+    float: right;
+    width: calc((100vw / 5) * 2);
+    height: 100vh;
+    max-width: 100%;
+    border-radius: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    transform: none;
+    position: relative;
+    padding: 0;
+  }
+}
+
+.details__overlay {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: transparent;
+  z-index: $modal-zindex - 1;
+  @media only screen and (min-width: $query-min-desktop) {
+    display: none;
+  }
+}
+
+.details__flag {
+  margin-left: 10px;
+  display: inline-block;
+  font-size: 24px;
+}
+
+.details__close {
+  float: right;
+  padding: 8px 10px;
+  z-index: $modal-zindex + 10;
+  text-decoration: none;
+}
+
+.details__content {
+  position: relative;
+  display: block;
+  margin: 0 0 0 3%;
+  padding: 0 0 3% 0;
+  background: #fff;
+  box-shadow: 0px 6px 17px 0px rgba(0, 0, 0, 0.3);
+  border-radius: $border-radius;
+  @media only screen and (min-width: $query-min-desktop) {
+    height: 100%;
+    overflow: auto;
+    border-radius: 0;
+  }
+}
+
+.details__thumbnail {
+  display: block;
+  position: relative;
+  transform: translateY(-30%);
+  max-width: 128px;
+  max-height: 128px;
+  margin: 0 auto 0 auto;
+  border: 8px solid #fff;
+  border-radius: 100%;
+
+  @media only screen and (min-width: $query-min-desktop) {
+    transform: none;
+    margin: 1% auto 3% auto;
+  }
+
+  img {
+    position: relative;
+    display: block;
+    max-width: 100%;
+    border-radius: 100%;
+  }
+}
+
+.details__title {
+  text-align: center;
+  padding: 0;
+  @include fluid-type(320px, $query-min-desktop, 24px, 28px);
+  margin: 0% 5% 2% 5%;
+  @media only screen and (min-width: $query-min-desktop) {
+    margin: 8% 5% 0 5%;
+  }
+}
+
+.details__subtitle {
+  text-align: center;
+  margin-bottom: 5%;
+  color: #666;
+  @extend .truncate;
+}
+
+.details__contact {
+  display: inline-block;
+}
+
+.contact__row {
+  display: inline-block;
+  width: 100%;
+}
+
+.contact__row + .contact__row {
+  border-top: 1px solid #e0e0e0;
+}
+
+.row__label,
+.row__content {
+  vertical-align: top;
+  display: inline-block;
+  padding: 5px 15px 10px 15px;
+}
+
+.row__content {
+  width: 60%;
+  border-left: 1px solid #e0e0e0;
+}
+
+.row__label {
+  width: 40%;
+  text-align: right;
+  font-size: 0.7em;
+  color: #666;
+}
+
+.details--open {
+  display: block;
+}

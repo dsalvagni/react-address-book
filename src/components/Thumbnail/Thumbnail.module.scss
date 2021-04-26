@@ -1,0 +1,9 @@
+.thumbnail {
+  display: block;
+  margin: 0 auto 0 auto;
+  img {
+    display: block;
+    max-width: 100%;
+    border-radius: 100%;
+  }
+}
