@@ -25,7 +25,7 @@ class User {
 
   getFullAddress() {
     if (!this.location) return null;
-    return `${this.location.street} ${this.location.city}, ${
+    return `${this.location.street.name} ${this.location.city}, ${
       this.location.state
     } - ${this.location.postcode}`;
   }
